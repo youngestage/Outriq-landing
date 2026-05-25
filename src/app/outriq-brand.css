@@ -1,0 +1,615 @@
+:root {
+  --outriq-primary: #a2272c;
+  --outriq-cream: #efede3;
+  --outriq-charcoal: #302f2c;
+}
+
+body {
+  background: var(--outriq-charcoal) !important;
+}
+
+.title-eight span,
+.title-four h3 span,
+.footer-intro h3 span {
+  color: var(--outriq-primary) !important;
+}
+
+/* Hero: override Piku index-5 defaults (180px type, block accent span, overlapping art) */
+.hero-banner-five .outriq-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding-right: clamp(1rem, 4vw, 3rem);
+}
+
+.hero-banner-five .outriq-hero-heading {
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem) !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.08 !important;
+  font-weight: 700;
+  color: var(--outriq-cream) !important;
+  max-width: 14ch;
+}
+
+/* Template styles every .hero-heading span as a huge block; only the accent word uses script type */
+.hero-banner-five .outriq-hero-heading .outriq-hero-accent {
+  font-family: "Pacifico", cursive !important;
+  font-weight: 400 !important;
+  color: var(--outriq-primary) !important;
+  display: inline !important;
+  position: static !important;
+  z-index: auto !important;
+  margin: 0 !important;
+  padding-right: 0.08em;
+}
+
+.hero-banner-five .outriq-hero-heading .outriq-hero-after {
+  display: block;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  color: var(--outriq-cream) !important;
+  margin: 0.12em 0 0 !important;
+}
+
+/* Clip hero art: show ~70% from the left; overflow hides the right */
+.hero-banner-five .wrapper {
+  overflow: hidden;
+}
+
+.hero-banner-five .outriq-hero-illustration-wrap {
+  position: absolute;
+  right: clamp(-2.5rem, -3vw, -1rem);
+  top: clamp(9rem, 16vh, 13rem);
+  width: min(59vw, 630px);
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-banner-five .outriq-hero-illustration {
+  position: static !important;
+  display: block;
+  width: min(84vw, 900px);
+  max-width: none !important;
+  height: auto;
+  transform: translateX(5%);
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45));
+}
+
+@media (max-width: 1199px) {
+  .hero-banner-five .outriq-hero-heading {
+    max-width: none;
+  }
+
+  .hero-banner-five .outriq-hero-illustration-wrap {
+    right: clamp(-2rem, -2.5vw, -0.75rem);
+    width: min(56vw, 546px);
+  }
+
+  .hero-banner-five .outriq-hero-illustration {
+    width: min(80vw, 780px);
+    transform: translateX(4%);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-banner-five .outriq-hero-illustration-wrap {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(70vw, 504px);
+    margin: 2.5rem auto 0;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  .hero-banner-five .outriq-hero-illustration {
+    width: min(100vw, 720px);
+    transform: translateX(5%);
+  }
+}
+
+.badge-tag {
+  border-color: var(--outriq-primary) !important;
+  color: var(--outriq-cream) !important;
+}
+
+.btn-thirteen,
+.btn-eleven {
+  background: var(--outriq-cream) !important;
+  border-color: var(--outriq-cream) !important;
+  color: var(--outriq-charcoal) !important;
+}
+
+.btn-thirteen:hover,
+.btn-eleven:hover,
+.btn-eleven.style-two:hover {
+  filter: none;
+  background: #fff !important;
+  border-color: #fff !important;
+  color: var(--outriq-charcoal) !important;
+}
+
+.btn-fourteen {
+  background: transparent !important;
+  border: 1px solid var(--outriq-cream) !important;
+  color: var(--outriq-cream) !important;
+}
+
+.btn-fourteen:hover {
+  filter: none;
+  background: rgba(239, 237, 227, 0.12) !important;
+  border-color: var(--outriq-cream) !important;
+  color: var(--outriq-cream) !important;
+}
+
+/* Header: transparent at top, frosted glass on scroll (no template purple) */
+.theme-main-menu.menu-overlay {
+  background: transparent !important;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.theme-main-menu.fixed {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background: rgba(48, 47, 44, 0.55) !important;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-bottom: 1px solid rgba(239, 237, 227, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+.theme-main-menu .inner-content,
+.theme-main-menu .gap-one {
+  background: transparent !important;
+}
+
+.theme-main-menu.menu-style-six .nav-item:hover .nav-link,
+.theme-main-menu.menu-style-six .dropdown-menu .dropdown-item:hover,
+.theme-main-menu.menu-style-six .dropdown-menu .dropdown-item.active {
+  color: var(--outriq-primary) !important;
+}
+
+.theme-main-menu.menu-style-six .mega-dropdown .home-item:hover span,
+.theme-main-menu.menu-style-six .dropdown-menu .dropdown-item span:before {
+  background: var(--outriq-primary) !important;
+}
+
+@media (max-width: 991px) {
+  .theme-main-menu .navbar-collapse {
+    background: rgba(48, 47, 44, 0.92) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 12px;
+    margin-top: 12px;
+    padding: 12px;
+  }
+}
+
+.theme-main-menu .logo img {
+  max-height: 56px;
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .theme-main-menu .logo img {
+    max-height: 48px;
+  }
+}
+
+#preloader .icon img {
+  max-width: 56px;
+  height: auto;
+}
+
+.outriq-integration-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--outriq-cream);
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+
+.outriq-integration-tile__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Dark logos on charcoal tiles (e.g. OpenAI wordmark) */
+.outriq-integration-tile__icon--light {
+  filter: brightness(0) invert(1);
+}
+
+.outriq-integration-tile__name {
+  line-height: 1.2;
+}
+
+.outriq-integration-marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.outriq-integration-marquee__track {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: max-content;
+  animation: outriq-integration-marquee 45s linear infinite;
+}
+
+.outriq-integration-marquee:hover .outriq-integration-marquee__track {
+  animation-play-state: paused;
+}
+
+.outriq-integration-marquee__item {
+  flex: 0 0 auto;
+  width: 160px;
+}
+
+@keyframes outriq-integration-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .outriq-integration-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .outriq-integration-marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
+.outriq-testimonial-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--outriq-charcoal);
+  margin-bottom: 16px;
+}
+
+.outriq-feature-labels {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.outriq-feature-labels li {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(48, 47, 44, 0.12);
+  color: var(--outriq-charcoal);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-banner-five .outriq-feature-labels li {
+  background: rgba(239, 237, 227, 0.12);
+  color: var(--outriq-cream);
+  border: 1px solid rgba(239, 237, 227, 0.2);
+}
+
+.outriq-draft-card {
+  background: var(--outriq-cream) !important;
+}
+
+.outriq-draft-card h3,
+.outriq-draft-card p {
+  color: var(--outriq-charcoal) !important;
+}
+
+/* Footer — Outriq × Kuroamai */
+.outriq-footer-partner__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.outriq-footer-partner__logo img {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-width: 200px;
+}
+
+.outriq-footer-partner__logo--kuroamai {
+  margin-left: -1.25rem;
+}
+
+.outriq-footer-partner__logo--kuroamai img {
+  height: 120px;
+  max-width: min(400px, 75vw);
+  width: auto;
+}
+
+.outriq-footer-partner__sep {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(239, 237, 227, 0.45);
+  user-select: none;
+}
+
+.outriq-footer-partner__byline {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(239, 237, 227, 0.65);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.outriq-footer-partner__byline:hover {
+  color: var(--outriq-cream);
+}
+
+/* Pricing */
+.outriq-pricing__intro {
+  margin-bottom: 0;
+}
+
+.outriq-pricing__intro h2 {
+  color: var(--outriq-cream);
+}
+
+.outriq-pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin: 3rem auto 3.5rem;
+}
+
+.outriq-pricing-toggle button {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(239, 237, 227, 0.25);
+  background: rgba(48, 47, 44, 0.6);
+  color: rgba(239, 237, 227, 0.75);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.outriq-pricing-toggle button.is-active {
+  background: var(--outriq-cream);
+  border-color: var(--outriq-cream);
+  color: var(--outriq-charcoal);
+}
+
+.outriq-pricing-toggle button:hover:not(.is-active) {
+  border-color: rgba(239, 237, 227, 0.45);
+  color: var(--outriq-cream);
+}
+
+.outriq-pricing-toggle__save {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(162, 39, 44, 0.2);
+  color: #f5b4b7;
+  border: 1px solid rgba(162, 39, 44, 0.35);
+}
+
+.outriq-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.outriq-pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem 1.75rem;
+  border-radius: 24px;
+  border: 1px solid rgba(239, 237, 227, 0.14);
+  background: rgba(48, 47, 44, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.outriq-pricing-card--featured {
+  border-color: var(--outriq-cream);
+  background: linear-gradient(
+    165deg,
+    rgba(239, 237, 227, 0.14) 0%,
+    rgba(48, 47, 44, 0.85) 48%
+  );
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(-6px);
+}
+
+.outriq-pricing-card__badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--outriq-primary);
+  color: var(--outriq-cream);
+}
+
+.outriq-pricing-card__name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--outriq-cream);
+  margin: 0 0 0.5rem;
+}
+
+.outriq-pricing-card__desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(239, 237, 227, 0.72);
+  margin: 0;
+}
+
+.outriq-pricing-card__head {
+  margin-bottom: 1.75rem;
+  padding-right: 5rem;
+}
+
+.outriq-pricing-card:not(.outriq-pricing-card--featured) .outriq-pricing-card__head {
+  padding-right: 0;
+}
+
+.outriq-pricing-card__price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.outriq-pricing-card__price {
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--outriq-cream);
+}
+
+.outriq-pricing-card--featured .outriq-pricing-card__price {
+  color: #fff;
+}
+
+.outriq-pricing-card__period {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(239, 237, 227, 0.55);
+}
+
+.outriq-pricing-card__features {
+  flex: 1;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.outriq-pricing-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(239, 237, 227, 0.88);
+}
+
+.outriq-pricing-card__features .bi {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--outriq-primary);
+  font-size: 1rem;
+}
+
+.outriq-pricing-card--featured .outriq-pricing-card__features .bi {
+  color: var(--outriq-cream);
+}
+
+.outriq-pricing-card__cta {
+  width: 100%;
+  text-align: center;
+  line-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+}
+
+.outriq-pricing-card__cta--outline {
+  background: transparent !important;
+  border: 1px solid var(--outriq-cream) !important;
+  color: var(--outriq-cream) !important;
+}
+
+.outriq-pricing-card__cta--outline:hover {
+  background: rgba(239, 237, 227, 0.12) !important;
+  border-color: var(--outriq-cream) !important;
+  color: var(--outriq-cream) !important;
+}
+
+@media (max-width: 991px) {
+  .outriq-pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .outriq-pricing-card--featured {
+    transform: none;
+    order: -1;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .outriq-pricing-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .outriq-pricing-card__head {
+    padding-right: 0;
+  }
+}
